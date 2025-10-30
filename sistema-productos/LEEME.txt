@@ -1,0 +1,54 @@
+Sistema de Registro de Productos
+
+Guía de Instalación y Ejecución (Entorno WAPP Stack)
+
+Siga estos pasos exactos para configurar y ejecutar el proyecto en un entorno Windows.
+
+== 1. Prerrequisitos (Instalación de WAPP) ==
+
+1. Descargar WAPP: Descargue el "Bitnami WAPP Stack" desde la web "https://toolslib.net/downloads" en la versión 7.1.18. Este paquete instalará Apache, PostgreSQL, PHP y pgAdmin.
+2. Instalar WAPP:
+   - Ejecute el instalador.
+   - IMPORTANTE: Durante la instalación, se le pedirá una contraseña para el usuario 'postgres' de la base de datos. Debe usar la contraseña: "admin123" para que coincida con el script de conexión del proyecto.
+   - Anote la carpeta de instalación (ej: C:\Bitnami\wappstack-7.1.18-1).
+
+== 2. Configuración del Entorno ==
+
+1. Iniciar Servicios:
+   - Vaya al Menú Inicio y abra el "Bitnami WAPP Stack Manager".
+   - En la pestaña "Manage Servers", asegúrese de que los servicios "Apache Web Server" y "PostgreSQL Database" estén corriendo (luz verde). Si no, selecciónelos y presione "Start".
+
+2. Crear la Base de Datos:
+   - En el Bitnami WAPP Manager, vaya a la pestaña "Welcome" y haga clic en "Open pgAdmin".
+   - Conéctese al servidor (le pedirá la contraseña "admin123").
+   - En el panel izquierdo, haga clic derecho en "Databases" -> Create -> Database...
+   - Ingrese el nombre de la base de datos: productos_db_2
+   - Haga clic en "Save".
+
+3. Crear las Tablas:
+   - En pgAdmin, seleccione la nueva base de datos "productos_db_2".
+   - Haga clic en el ícono "Query Tool" (⚡).
+   - Abra el archivo "sql/database.sql" de este repositorio.
+   - Copie todo el contenido SQL y péguelo o adjúntelo en la ventana del Query Tool.
+   - Presione el botón "Execute/Run" (▶).
+
+== 3. Instalación del Proyecto ==
+
+1. Colocar los archivos:
+   - Navegue a la carpeta "htdocs" de su instalación de WAPP.
+   - Ruta por defecto: C:\Bitnami\wappstack-7.1.18-1\apache2\htdocs
+   - Copie la carpeta completa de este proyecto (llamada "sistema-productos") dentro de "htdocs".
+   - La ruta final de su index.html debe ser: C:\...\htdocs\sistema-productos\index.html
+
+== 4. Ejecución y Prueba ==
+
+1. Asegúrese de que los servicios de Apache y PostgreSQL sigan corriendo.
+2. Abra su navegador web (Chrome, Firefox).
+3. Visite la siguiente URL:
+   http://localhost/sistema-productos/
+
+== 5. Información Técnica ==
+
+* **Versión de PHP:** PHP Version 7.1.18 (la misma incluida en el stack de WAPP).
+* **Base de Datos:** PostgreSQL 10.4 (stack de WAPP que se utilizó).
+* **Versión Bitnami WAPP:** Version 7.1.18-1

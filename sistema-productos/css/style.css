@@ -1,0 +1,119 @@
+/* Estilos Generales (según instrucciones dadas)*/
+body {
+    font-family: Arial, sans-serif; /* Requisito */
+    font-size: 16px; /* Requisito */
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 650px; /* Ancho máximo del formulario */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    font-size: 16px;
+    font-family: Arial, sans-serif; /* Requisito de tipografía */
+}
+
+select[disabled] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los checkboxes pasen a la siguiente línea si no caben */
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer; /* Mejora la usabilidad */
+}
+
+/* Estilos del Botón (según detalles de prueba) */
+button[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    background-color: #1aab8a; /* Requisito */
+    color: white;
+    font-size: 16px; /* Requisito */
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #168a70;
+}
+
+/* --- MEJORA RESPONSIVA --- */
+
+/* Se activa en pantallas de 768px o menos (tablets y móviles) */
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 1rem; /* Menos padding en móviles */
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        flex-direction: column; /* Apila las columnas (ej: Código y Nombre) una encima de otra */
+        gap: 0; /* Quitamos el espacio lateral, ya que ahora son filas */
+    }
+
+    .checkbox-group {
+        flex-direction: column; /* Apila los checkboxes verticalmente */
+        align-items: flex-start;
+    }
+}
